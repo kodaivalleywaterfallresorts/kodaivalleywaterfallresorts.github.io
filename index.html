@@ -1,114 +1,117 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Kodaivalley Waterfall Resorts</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body {
-margin:0;
-font-family:Arial;
-background:#f4f4f4;
-text-align:center;
-}
+  <title>Kodaivalley Waterfall Resort</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
 
-header {
-background:#145a32;
-color:white;
-padding:40px;
-}
+    header {
+      background: #2e8b57;
+      color: white;
+      padding: 20px;
+    }
 
-section {
-padding:40px;
-}
+    section {
+      padding: 20px;
+    }
 
-.room-box {
-background:white;
-margin:20px auto;
-padding:20px;
-width:80%;
-max-width:500px;
-box-shadow:0 0 10px #ccc;
-border-radius:10px;
-}
+    .form-box {
+      background: white;
+      padding: 20px;
+      max-width: 400px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
 
-input, select {
-padding:10px;
-margin:10px;
-width:80%;
-max-width:400px;
-}
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+    }
 
-button {
-padding:12px 25px;
-background:#145a32;
-color:white;
-border:none;
-border-radius:5px;
-font-size:16px;
-cursor:pointer;
-}
+    button {
+      background: #2e8b57;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
 
-button:hover {
-background:#0e3d22;
-}
+    button:hover {
+      background: #246b45;
+    }
 
-footer {
-background:#222;
-color:white;
-padding:20px;
-}
-</style>
+    .whatsapp-btn {
+      display: inline-block;
+      background: #25D366;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      padding: 15px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-<h1>Kodaivalley Waterfall Resorts</h1>
-<p>Luxury Stay in the Heart of Kodaikanal</p>
+  <h1>Kodaivalley Waterfall Resort</h1>
+  <p>Experience Nature Like Never Before 🌿</p>
 </header>
 
 <section>
-<h2>Our Rooms</h2>
-
-<div class="room-box">
-<h3>Deluxe Room</h3>
-<p>₹3000 / Night</p>
-</div>
-
-<div class="room-box">
-<h3>Family Suite</h3>
-<p>₹5000 / Night</p>
-</div>
-
+  <h2>About Our Resort</h2>
+  <p>Enjoy peaceful waterfalls, luxury rooms, and unforgettable memories in Kodaikanal.</p>
 </section>
 
-<section>
-<h2>Book Your Stay</h2>
+<section class="form-box">
+  <h2>Book Your Stay</h2>
 
-<form>
-<input type="text" placeholder="Your Name" required><br>
-<input type="tel" placeholder="Mobile Number" required><br>
-<input type="date" required><br>
-<input type="date" required><br>
+  <form action="https://formspree.io/f/xykdweba" method="POST">
 
-<select>
-<option>Deluxe Room</option>
-<option>Family Suite</option>
-</select><br>
+    <input type="text" name="name" placeholder="Your Name" required>
 
-<button type="submit">Send Booking Request</button>
-</form>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
 
-</section>
+    <input type="email" name="email" placeholder="Email Address" required>
 
-<section>
-<h2>Location</h2>
-<p>Kodaikanal, Tamil Nadu - 624101</p>
+    <label>Check-in Date</label>
+    <input type="date" name="checkin" required>
+
+    <label>Check-out Date</label>
+    <input type="date" name="checkout" required>
+
+    <input type="number" name="guests" placeholder="Number of Guests" required>
+
+    <button type="submit">Book Now</button>
+
+  </form>
+
+  <a class="whatsapp-btn" href="https://wa.me/919976278957" target="_blank">
+    Book Direct on WhatsApp
+  </a>
+
 </section>
 
 <footer>
-<p>Contact: 9876543210</p>
-<p>© 2026 Kodaivalley Waterfall Resorts</p>
+  <p>📍 Kodaikanal | 📞 +91 9976278957</p>
+  <p>© 2026 Kodaivalley Waterfall Resort</p>
 </footer>
 
 </body>
