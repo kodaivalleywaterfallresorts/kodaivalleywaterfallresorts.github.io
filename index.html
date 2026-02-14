@@ -3,238 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kodai Valley Waterfall Resorts | Official Website</title>
+    <title>Kodai Valley Waterfall Resorts | Luxury Escape</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root {
-            --primary: #0a9396;
-            --dark: #005f73;
-            --whatsapp: #25D366;
-            --bg-light: #f4f9f9;
+            --gold: #c5a059;
+            --dark-green: #0a4d4f;
+            --text-light: #f8f9fa;
+            --glass: rgba(255, 255, 255, 0.1);
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            margin: 0;
             font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-light);
-            color: #333;
-            scroll-behavior: smooth;
+            background-color: #051c1d; /* Luxury Dark Theme */
+            color: white;
+            overflow-x: hidden;
         }
 
-        /* --- Cinematic Header --- */
-        header {
-            position: relative;
-            height: 80vh;
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        nav .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--gold); }
+
+        /* --- Hero Section with Drone Animation --- */
+        .hero {
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: white;
+            position: relative;
             overflow: hidden;
         }
 
-        .header-bg {
+        .hero-bg {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('outside.jpeg');
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('outside.jpeg');
             background-size: cover;
             background-position: center;
             z-index: -1;
-            /* Drone Shot Animation */
-            animation: droneShot 15s infinite ease-in-out;
+            animation: kenBurns 20s infinite alternate;
         }
 
-        @keyframes droneShot {
-            0% { transform: scale(1) translateY(0); }
-            50% { transform: scale(1.1) translateY(-20px); }
-            100% { transform: scale(1) translateY(0); }
+        @keyframes kenBurns {
+            0% { transform: scale(1) translate(0, 0); }
+            100% { transform: scale(1.2) translate(-20px, -20px); }
         }
 
-        header h1 {
-            font-size: clamp(2rem, 8vw, 3.5rem);
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 10vw, 5rem);
+            margin-bottom: 10px;
+            line-height: 1.1;
         }
 
-        header p {
-            font-size: 1.2rem;
-            margin-top: 10px;
-            font-weight: 300;
-        }
+        .hero p { font-size: 1.2rem; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; }
 
-        /* --- Gallery Section --- */
-        .container {
-            max-width: 1200px;
-            margin: -60px auto 50px;
-            padding: 0 20px;
-            position: relative;
-            z-index: 10;
-        }
+        /* --- Luxury Gallery --- */
+        .section-padding { padding: 100px 20px; text-align: center; }
 
-        .gallery {
+        .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 15px;
+            max-width: 1200px;
+            margin: 50px auto;
         }
 
-        .gallery img {
-            width: 100%;
-            height: 250px;
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            height: 400px;
+        }
+
+        .gallery-item img {
+            width: 100%; height: 100%;
             object-fit: cover;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            transition: 0.4s;
-            border: 4px solid white;
+            transition: 0.5s;
         }
 
-        .gallery img:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-        }
+        .gallery-item:hover img { transform: scale(1.1); filter: brightness(70%); }
 
-        /* --- Booking Form Section --- */
-        .booking-section {
-            padding: 60px 20px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .form-box {
-            background: white;
+        /* --- Booking Glass Box --- */
+        .booking-card {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.1);
             padding: 40px;
-            border-radius: 25px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-            width: 100%;
-            max-width: 500px;
-        }
-
-        .form-box h3 {
-            text-align: center;
-            color: var(--dark);
-            margin-bottom: 25px;
-            font-size: 1.5rem;
+            border-radius: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
         }
 
         input, textarea {
             width: 100%;
-            padding: 14px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 15px;
             margin: 10px 0;
-            border: 1px solid #ddd;
+            color: white;
             border-radius: 10px;
-            box-sizing: border-box;
-            font-family: inherit;
             outline: none;
         }
 
-        input:focus { border-color: var(--primary); }
-
-        .btn-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        button, .wa-btn {
-            padding: 15px;
+        .btn-main {
+            background: var(--gold);
+            color: #000;
+            padding: 15px 30px;
             border: none;
-            border-radius: 10px;
-            cursor: pointer;
+            border-radius: 50px;
             font-weight: 600;
-            font-family: inherit;
-            text-align: center;
-            text-decoration: none;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
             transition: 0.3s;
         }
 
-        .email-btn { background: var(--primary); color: white; }
-        .wa-btn { background: var(--whatsapp); color: white; display: flex; align-items: center; justify-content: center; }
+        .btn-main:hover { background: white; transform: translateY(-3px); }
 
-        button:hover, .wa-btn:hover {
-            transform: scale(1.03);
-            opacity: 0.9;
+        /* --- Fixed WhatsApp Button --- */
+        .wa-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            width: 60px; height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            z-index: 1000;
+            text-decoration: none;
+            animation: pulse 2s infinite;
         }
 
-        /* Responsive */
-        @media (max-width: 600px) {
-            .btn-container { grid-template-columns: 1fr; }
-            header { height: 60vh; }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 15px 20px; }
+            .hero h1 { font-size: 3rem; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="header-bg"></div>
-    <h1>Kodai Valley</h1>
-    <p>Waterfall Resorts & Spa</p>
-</header>
+    <nav>
+        <div class="logo">KODAI VALLEY</div>
+        <div style="font-size: 0.8rem; letter-spacing: 2px;">ESTD 2024</div>
+    </nav>
 
-<div class="container">
-    <div class="gallery">
-        <img src="snow.jpeg" alt="Resort Area">
-        <img src="falls.jpeg" alt="Private Falls">
-        <img src="outside.jpeg" alt="Entrance">
-    </div>
-</div>
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <p>Welcome to Paradise</p>
+        <h1>Pure Nature. <br> Absolute Luxury.</h1>
+        <a href="#book" style="color: white; margin-top: 20px; text-decoration: none; border-bottom: 2px solid var(--gold); padding-bottom: 5px;">EXPLORE MORE</a>
+    </section>
 
-<section class="booking-section">
-    <div class="form-box">
-        <h3>Book Your Private Stay</h3>
-        <form id="resortForm" action="https://formspree.io/f/xykdweba" method="POST">
-            <input type="text" id="name" name="name" placeholder="Full Name" required>
-            <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
-            
-            <div style="display: flex; gap: 10px;">
-                <div style="flex:1">
-                    <label style="font-size: 12px; margin-left: 5px;">Check-In</label>
+    <section class="section-padding">
+        <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem;">The Experience</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="snow.jpeg"></div>
+            <div class="gallery-item"><img src="falls.jpeg"></div>
+            <div class="gallery-item"><img src="outside.jpeg"></div>
+        </div>
+    </section>
+
+    <section id="book" class="section-padding" style="background: #072627;">
+        <div class="booking-card">
+            <h3 style="font-family: 'Playfair Display'; font-size: 2rem; margin-bottom: 20px;">Reservations</h3>
+            <form id="luxuryForm" action="https://formspree.io/f/xykdweba" method="POST">
+                <input type="text" id="name" name="name" placeholder="Guest Name" required>
+                <input type="tel" id="phone" name="phone" placeholder="Contact Number" required>
+                <div style="display: flex; gap: 10px;">
                     <input type="date" id="checkin" name="checkin" required>
-                </div>
-                <div style="flex:1">
-                    <label style="font-size: 12px; margin-left: 5px;">Check-Out</label>
                     <input type="date" id="checkout" name="checkout" required>
                 </div>
-            </div>
-            
-            <textarea id="message" name="message" rows="3" placeholder="Special Requests (Optional)"></textarea>
-            
-            <div class="btn-container">
-                <button type="submit" class="email-btn">Send Email</button>
-                <a href="#" onclick="bookingWhatsApp()" class="wa-btn">WhatsApp Book</a>
-            </div>
-        </form>
-    </div>
-</section>
+                <textarea id="message" name="message" rows="3" placeholder="Special Requests..."></textarea>
+                <button type="submit" class="btn-main">CONFIRM VIA EMAIL</button>
+            </form>
+        </div>
+    </section>
 
-<script>
-    function bookingWhatsApp() {
-        const name = document.getElementById('name').value;
-        const phone = document.getElementById('phone').value;
-        const checkin = document.getElementById('checkin').value;
-        const checkout = document.getElementById('checkout').value;
-        const msg = document.getElementById('message').value;
+    <a href="#" onclick="sendWhatsApp()" class="wa-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-        if(!name || !phone || !checkin || !checkout) {
-            alert("Please fill important details!");
-            return;
+    <footer style="padding: 50px; text-align: center; font-size: 0.8rem; color: #555;">
+        © 2026 KODAI VALLEY WATERFALL RESORTS. ALL RIGHTS RESERVED.
+    </footer>
+
+    <script>
+        function sendWhatsApp() {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const checkin = document.getElementById('checkin').value;
+            const checkout = document.getElementById('checkout').value;
+
+            if(!name || !phone) {
+                alert("Please fill your Name and Phone for WhatsApp booking.");
+                return;
+            }
+
+            const text = `*LUXURY BOOKING REQUEST*%0A%0A*Guest:* ${name}%0A*Phone:* ${phone}%0A*Check-in:* ${checkin}%0A*Check-out:* ${checkout}`;
+            window.open(`https://wa.me/919976278957?text=${text}`, '_blank');
         }
-
-        // Professional Message Template
-        const text = `*New Booking - Kodai Valley*%0A%0A` +
-                     `*Name:* ${name}%0A` +
-                     `*Phone:* ${phone}%0A` +
-                     `*Dates:* ${checkin} to ${checkout}%0A` +
-                     `*Note:* ${msg}`;
-        
-        const wpUrl = `https://wa.me/919976278957?text=${text}`;
-        window.open(wpUrl, '_blank');
-    }
-</script>
+    </script>
 
 </body>
 </html>
