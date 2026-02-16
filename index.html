@@ -31,13 +31,12 @@
             justify-content: space-between;
             align-items: center;
             font-size: 0.9rem;
-            font-weight: 500;
         }
-        .top-bar a { color: white; text-decoration: none; }
+        .top-bar a { color: white; text-decoration: none; font-weight: 600; }
 
         /* --- Royal Header --- */
         header {
-            height: 60vh;
+            height: 65vh;
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('Resort_5[1].jpg');
             background-size: cover;
             background-position: center;
@@ -56,20 +55,10 @@
             text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
         }
 
-        .owner-info {
-            background: white;
-            color: var(--primary);
-            padding: 8px 25px;
-            font-weight: 600;
-            border-radius: 50px;
-            margin-top: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
         /* --- 5-Star Photo Gallery --- */
         .section-title {
             text-align: center;
-            padding: 50px 0 20px;
+            padding: 60px 0 20px;
             font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
             color: var(--primary);
@@ -78,64 +67,85 @@
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 25px;
             padding: 20px 5%;
         }
 
         .gallery-item {
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: 0.3s;
             background: white;
         }
 
-        .gallery-item:hover { transform: translateY(-8px); }
+        .gallery-item:hover { transform: translateY(-10px); }
 
         .gallery-item img {
             width: 100%;
-            height: 300px;
+            height: 350px;
             object-fit: cover;
         }
 
         .gallery-item p {
-            padding: 15px;
+            padding: 20px;
             text-align: center;
             font-weight: 600;
+            font-size: 1.1rem;
             color: var(--primary);
         }
 
-        /* --- Attractive Booking Form --- */
-        .booking-area {
-            background: #f1f8f7;
+        /* --- Location Section --- */
+        .location-box {
+            text-align: center;
             padding: 80px 5%;
-            margin-top: 40px;
+            background: #f1f8f7;
         }
 
+        .btn-location {
+            background: var(--primary);
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+            box-shadow: 0 8px 20px rgba(0,105,92,0.3);
+        }
+
+        .btn-location:hover {
+            background: #004d40;
+            transform: scale(1.05);
+        }
+
+        /* --- Booking Form --- */
         .booking-card {
             max-width: 650px;
-            margin: auto;
+            margin: 60px auto;
             background: white;
             padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-            border-top: 8px solid var(--primary);
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            border: 1px solid #eee;
         }
 
         .booking-card h2 {
             text-align: center;
-            margin-bottom: 30px;
             color: var(--primary);
+            margin-bottom: 30px;
+            font-family: 'Playfair Display', serif;
         }
-
-        label { font-size: 0.85rem; font-weight: 600; color: #555; margin-top: 12px; display: block; }
 
         input, textarea {
             width: 100%;
-            padding: 14px;
-            margin: 8px 0;
+            padding: 15px;
+            margin: 10px 0;
             border: 1px solid #ddd;
-            border-radius: 8px;
+            border-radius: 10px;
             background: #fafafa;
             font-family: inherit;
         }
@@ -145,25 +155,34 @@
             color: white;
             border: none;
             width: 100%;
-            padding: 18px;
-            font-size: 1.2rem;
+            padding: 20px;
+            font-size: 1.3rem;
             font-weight: bold;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
             margin-top: 20px;
             transition: 0.3s;
         }
 
-        .submit-btn:hover { background: #e65100; transform: scale(1.02); }
-
-        footer {
+        /* --- Footer Details --- */
+        .footer-details {
+            background: var(--primary);
+            color: white;
             text-align: center;
-            padding: 40px;
-            color: #777;
-            font-size: 0.9rem;
+            padding: 60px 5%;
         }
 
-        /* Floating WhatsApp */
+        .footer-details h3 { font-size: 1.8rem; margin-bottom: 10px; }
+        .footer-details p { font-size: 1.2rem; opacity: 0.9; margin: 5px 0; }
+        .footer-details .call-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.5rem;
+            display: block;
+            margin-top: 15px;
+        }
+
         .wa-float {
             position: fixed; bottom: 30px; right: 30px;
             background: #25d366; color: white; width: 65px; height: 65px;
@@ -171,123 +190,83 @@
             font-size: 35px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); z-index: 1000;
             text-decoration: none;
         }
-
-        @media (max-width: 600px) {
-            .top-bar { flex-direction: column; gap: 5px; text-align: center; }
-        }
     </style>
 </head>
 <body>
 
 <div class="top-bar">
-    <div><i class="fas fa-map-marker-alt"></i> Kodaikanal, Tamil Nadu</div>
-    <div><i class="fas fa-phone-alt"></i> <a href="tel:+919976278957">+91 99762 78957</a></div>
+    <div><i class="fas fa-water"></i> Kodai Valley Waterfall Resorts</div>
+    <div><a href="tel:+919976278957"><i class="fas fa-phone-alt"></i> +91 99762 78957</a></div>
 </div>
 
 <header>
-    <h1>Kodai Valley Waterfall Resorts</h1>
-    <div class="owner-info">Owner: Mohamed Mastan</div>
+    <h1>Escape to Nature</h1>
+    <p style="margin-top:15px; font-size:1.2rem; opacity:0.9">Official Resort of Mohamed Mastan</p>
 </header>
 
-<div class="section-title">Experience Luxury & Adventure</div>
+<div class="section-title">Gallery of Luxury</div>
 <div class="gallery">
-    <div class="gallery-item">
-        <img src="Resort_5[1].jpg" alt="Resort View">
-        <p>Main Resort Palace</p>
-    </div>
-    <div class="gallery-item">
-        <img src="Jeep1[1].jpg" alt="Jeep Safari">
-        <p>Adventure Jeep Safari</p>
-    </div>
-    <div class="gallery-item">
-        <img src="Resorts_3[1].jpg" alt="Resort Side">
-        <p>Nature View Stay</p>
-    </div>
-    <div class="gallery-item">
-        <img src="Room[1].jpg" alt="Bedroom">
-        <p>5-Star Luxury Room</p>
-    </div>
-    <div class="gallery-item">
-        <img src="Sitting_area[1].jpg" alt="Lounge Area">
-        <p>Relaxation Area</p>
-    </div>
-    <div class="gallery-item">
-        <img src="falls.jpeg" alt="Waterfalls">
-        <p>Private Waterfall Access</p>
-    </div>
+    <div class="gallery-item"><img src="Resort_5[1].jpg"><p>Main Palace View</p></div>
+    <div class="gallery-item"><img src="Jeep1[1].jpg"><p>Jeep Safari Adventure</p></div>
+    <div class="gallery-item"><img src="Resorts_3[1].jpg"><p>Nature Stay</p></div>
+    <div class="gallery-item"><img src="Room[1].jpg"><p>Premium Suite</p></div>
+    <div class="gallery-item"><img src="Sitting_area[1].jpg"><p>Lounge Area</p></div>
+    <div class="gallery-item"><img src="falls.jpeg"><p>Private Waterfall</p></div>
 </div>
 
-<div class="booking-area" id="book">
-    <div class="booking-card">
-        <h2>Reserve Your Stay</h2>
-        <form id="resortForm">
-            <label>FULL NAME</label>
-            <input type="text" id="name" placeholder="Enter your name" required>
+<div class="location-box">
+    <h2 style="font-family:'Playfair Display'; margin-bottom:20px;">Our Location</h2>
+    <p style="margin-bottom:30px; color:#555;">Kodaikanal, Tamil Nadu - Experience the Waterfall Valley</p>
+    <a href="https://maps.google.com/?cid=16050856507054137538&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNl" target="_blank" class="btn-location">
+        <i class="fas fa-map-marked-alt"></i> VIEW ON GOOGLE MAPS
+    </a>
+</div>
 
-            <label>EMAIL ID</label>
-            <input type="email" id="email" placeholder="yourname@gmail.com" required>
-
-            <label>MOBILE NUMBER</label>
-            <input type="tel" id="phone" placeholder="+91 99762 78957" required>
-
-            <div style="display: flex; gap: 15px;">
-                <div style="flex:1">
-                    <label>CHECK-IN</label>
-                    <input type="date" id="checkin" required>
-                </div>
-                <div style="flex:1">
-                    <label>CHECK-OUT</label>
-                    <input type="date" id="checkout" required>
-                </div>
-            </div>
-
-            <label>TOTAL GUESTS</label>
-            <input type="number" id="guests" min="1" placeholder="Ex: 4">
-
-            <label>SPECIAL REQUESTS</label>
-            <textarea id="details" rows="3" placeholder="Food requirements, Extra bed, etc."></textarea>
-
-            <button type="button" class="submit-btn" onclick="sendToWhatsApp()">
-                BOOK NOW VIA WHATSAPP
-            </button>
-        </form>
+<div class="booking-card">
+    <h2>Book Your Luxury Stay</h2>
+    <input type="text" id="name" placeholder="Guest Full Name" required>
+    <input type="tel" id="phone" placeholder="Mobile Number" required>
+    <div style="display:flex; gap:10px;">
+        <input type="date" id="checkin" style="flex:1">
+        <input type="date" id="checkout" style="flex:1">
     </div>
+    <input type="number" id="guests" placeholder="Total Guests">
+    <textarea id="details" rows="3" placeholder="Special Requests (Food, Travel, etc.)"></textarea>
+    <button class="submit-btn" onclick="sendToWhatsApp()">CONFIRM VIA WHATSAPP</button>
 </div>
 
 <a href="https://wa.me/919976278957" class="wa-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
 </a>
 
-<footer>
-    © 2026 Kodai Valley Waterfall Resorts | Developed for <b>Mohamed Mastan</b><br>
-    Contact: +91 9976278957
-</footer>
+<div class="footer-details">
+    <h3>Mohamed Mastan</h3>
+    <p>Owner & Founder</p>
+    <p>Kodai Valley Waterfall Resorts</p>
+    <a href="tel:+919976278957" class="call-link"><i class="fas fa-phone-alt"></i> +91 99762 78957</a>
+    <div style="margin-top:30px; font-size:0.8rem; opacity:0.6;">© 2026 OFFICIAL WEBSITE</div>
+</div>
 
 <script>
     function sendToWhatsApp() {
         const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
         const phone = document.getElementById('phone').value;
         const checkin = document.getElementById('checkin').value;
         const checkout = document.getElementById('checkout').value;
         const guests = document.getElementById('guests').value;
         const details = document.getElementById('details').value;
 
-        if(!name || !phone || !checkin || !checkout) {
-            alert("Please fill all details!");
-            return;
-        }
+        if(!name || !phone) { alert("Name and Phone are mandatory!"); return; }
 
-        const msg = `*NEW BOOKING AT KODAI VALLEY*%0A` +
+        const msg = `*RESORT BOOKING REQUEST*%0A` +
+                    `*Owner:* Mohamed Mastan%0A` +
                     `----------------------------%0A` +
-                    `*Name:* ${name}%0A` +
-                    `*Email:* ${email}%0A` +
-                    `*Phone:* ${phone}%0A` +
+                    `*Guest Name:* ${name}%0A` +
+                    `*Mobile:* ${phone}%0A` +
                     `*Check-in:* ${checkin}%0A` +
                     `*Check-out:* ${checkout}%0A` +
                     `*Guests:* ${guests}%0A` +
-                    `*Requests:* ${details}%0A` +
-                    `----------------------------`;
+                    `*Notes:* ${details}`;
 
         window.open(`https://wa.me/919976278957?text=${msg}`, '_blank');
     }
