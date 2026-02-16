@@ -3,220 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kodai Valley Waterfall Resorts | Luxury Escape</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Kodai Valley Waterfall Resorts | Official</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        :root {
-            --gold: #c5a059;
-            --dark-green: #0a4d4f;
-            --text-light: #f8f9fa;
-            --glass: rgba(255, 255, 255, 0.1);
-        }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: #e3f2fd; color: #333; }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #051c1d; /* Luxury Dark Theme */
-            color: white;
-            overflow-x: hidden;
-        }
-
-        /* --- Navigation --- */
-        nav {
-            position: fixed;
-            top: 0; width: 100%;
-            padding: 20px 50px;
+        /* --- Header Navigation --- */
+        header {
+            background: white;
+            padding: 15px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 1000;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky; top: 0; z-index: 1000;
         }
+        .logo { color: #0a9396; font-weight: 600; font-size: 1.2rem; }
+        nav a { margin: 0 15px; text-decoration: none; color: #555; font-size: 0.9rem; }
+        .book-now-btn { background: #0a9396; color: white; padding: 8px 20px; border-radius: 5px; text-decoration: none; }
 
-        nav .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--gold); }
-
-        /* --- Hero Section with Drone Animation --- */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-bg {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('outside.jpeg');
-            background-size: cover;
-            background-position: center;
-            z-index: -1;
-            animation: kenBurns 20s infinite alternate;
-        }
-
-        @keyframes kenBurns {
-            0% { transform: scale(1) translate(0, 0); }
-            100% { transform: scale(1.2) translate(-20px, -20px); }
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 10vw, 5rem);
-            margin-bottom: 10px;
-            line-height: 1.1;
-        }
-
-        .hero p { font-size: 1.2rem; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; }
-
-        /* --- Luxury Gallery --- */
-        .section-padding { padding: 100px 20px; text-align: center; }
-
-        .gallery-grid {
+        /* --- Hero Gallery Layout --- */
+        .gallery-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
-            max-width: 1200px;
-            margin: 50px auto;
+            padding: 40px 50px;
+            max-width: 1400px;
+            margin: auto;
         }
 
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px;
-            height: 400px;
-        }
-
-        .gallery-item img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            transition: 0.5s;
-        }
-
-        .gallery-item:hover img { transform: scale(1.1); filter: brightness(70%); }
-
-        /* --- Booking Glass Box --- */
-        .booking-card {
-            background: var(--glass);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 40px;
-            border-radius: 30px;
-            max-width: 600px;
-            margin: 0 auto;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-        }
-
-        input, textarea {
-            width: 100%;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 15px;
-            margin: 10px 0;
-            color: white;
+        .card {
+            background: white;
             border-radius: 10px;
-            outline: none;
-        }
-
-        .btn-main {
-            background: var(--gold);
-            color: #000;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            position: relative;
+            height: 450px;
             transition: 0.3s;
         }
+        .card:hover { transform: translateY(-5px); }
 
-        .btn-main:hover { background: white; transform: translateY(-3px); }
-
-        /* --- Fixed WhatsApp Button --- */
-        .wa-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25d366;
-            width: 60px; height: 60px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .card img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .card-content {
+            position: absolute;
+            bottom: 0; left: 0; width: 100%;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
             color: white;
-            font-size: 30px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-            z-index: 1000;
-            text-decoration: none;
-            animation: pulse 2s infinite;
+        }
+        .card-content h2 { font-size: 1.2rem; margin-bottom: 5px; }
+        .card-content p { font-size: 0.8rem; opacity: 0.8; }
+
+        /* --- Bottom Split Sections --- */
+        .bottom-sections {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 40px 50px;
+            max-width: 1400px;
+            margin: auto;
         }
 
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        .booking-form-card, .info-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .booking-form-card h3 { color: #0a9396; margin-bottom: 20px; }
+        input, textarea, select {
+            width: 100%; padding: 12px; margin: 8px 0;
+            border: 1px solid #ddd; border-radius: 5px; background: #f9f9f9;
+        }
+
+        .submit-btn {
+            background: #0a9396; color: white; border: none; width: 100%;
+            padding: 15px; border-radius: 5px; font-weight: 600; cursor: pointer;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed; bottom: 30px; right: 30px;
+            background: #25d366; color: white; width: 60px; height: 60px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1000;
         }
 
         @media (max-width: 768px) {
-            nav { padding: 15px 20px; }
-            .hero h1 { font-size: 3rem; }
+            .bottom-sections { grid-template-columns: 1fr; }
+            header { padding: 15px 20px; }
+            nav { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">KODAI VALLEY</div>
-        <div style="font-size: 0.8rem; letter-spacing: 2px;">ESTD 2024</div>
-    </nav>
+    <header>
+        <div class="logo">KODAI VALLEY <br> <span style="font-size: 0.7rem;">Waterfall Resorts</span></div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#" class="book-now-btn">BOOK NOW</a>
+        </nav>
+    </header>
 
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <p>Welcome to Paradise</p>
-        <h1>Pure Nature. <br> Absolute Luxury.</h1>
-        <a href="#book" style="color: white; margin-top: 20px; text-decoration: none; border-bottom: 2px solid var(--gold); padding-bottom: 5px;">EXPLORE MORE</a>
-    </section>
-
-    <section class="section-padding">
-        <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem;">The Experience</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item"><img src="snow.jpeg"></div>
-            <div class="gallery-item"><img src="falls.jpeg"></div>
-            <div class="gallery-item"><img src="outside.jpeg"></div>
+    <div class="gallery-container">
+        <div class="card">
+            <img src="outside.jpeg" alt="Resort View">
+            <div class="card-content">
+                <h2>Kodai Valley</h2>
+                <p>Waterfall Resorts | Official Website</p>
+            </div>
         </div>
-    </section>
+        <div class="card">
+            <img src="falls.jpeg" alt="Waterfall">
+            <div class="card-content">
+                <h2>Private Falls</h2>
+                <p>Experience Nature's Beauty</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="snow.jpeg" alt="Rooms">
+            <div class="card-content">
+                <h2>Luxury Stay</h2>
+                <p>Premium Comfort Rooms</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="outside.jpeg" alt="Garden">
+            <div class="card-content">
+                <h2>Nature Walk</h2>
+                <p>Greenery All Around</p>
+            </div>
+        </div>
+    </div>
 
-    <section id="book" class="section-padding" style="background: #072627;">
-        <div class="booking-card">
-            <h3 style="font-family: 'Playfair Display'; font-size: 2rem; margin-bottom: 20px;">Reservations</h3>
-            <form id="luxuryForm" action="https://formspree.io/f/xykdweba" method="POST">
-                <input type="text" id="name" name="name" placeholder="Guest Name" required>
-                <input type="tel" id="phone" name="phone" placeholder="Contact Number" required>
+    <div class="bottom-sections">
+        <div class="booking-form-card">
+            <h3>33 Booking Form</h3>
+            <form id="resortForm" action="https://formspree.io/f/xykdweba" method="POST">
+                <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
+                <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
                 <div style="display: flex; gap: 10px;">
                     <input type="date" id="checkin" name="checkin" required>
                     <input type="date" id="checkout" name="checkout" required>
                 </div>
-                <textarea id="message" name="message" rows="3" placeholder="Special Requests..."></textarea>
-                <button type="submit" class="btn-main">CONFIRM VIA EMAIL</button>
+                <textarea id="message" name="message" rows="3" placeholder="Special Requests"></textarea>
+                <button type="submit" class="submit-btn">CONTINUE NOW</button>
             </form>
         </div>
-    </section>
 
-    <a href="#" onclick="sendWhatsApp()" class="wa-float">
+        <div class="info-card">
+            <h3 style="color: #0a4d4f;">Direct WhatsApp Booking</h3>
+            <p style="font-size: 0.9rem; color: #666; margin: 15px 0;">
+                Click the button below to directly chat with our manager for instant booking and custom packages.
+            </p>
+            <div style="margin-top: 20px;">
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <i class="fab fa-whatsapp" style="color: #25d366; font-size: 1.5rem; margin-right: 10px;"></i>
+                    <span>Fast Response within 10 mins</span>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <i class="far fa-clock" style="color: #0a9396; font-size: 1.5rem; margin-right: 10px;"></i>
+                    <span>Available 24/7 for support</span>
+                </div>
+            </div>
+            <button onclick="sendWhatsApp()" class="submit-btn" style="background: #25d366; margin-top: 30px;">
+                CHAT ON WHATSAPP
+            </button>
+        </div>
+    </div>
+
+    <a href="#" onclick="sendWhatsApp()" class="whatsapp-float">
         <i class="fab fa-whatsapp"></i>
     </a>
-
-    <footer style="padding: 50px; text-align: center; font-size: 0.8rem; color: #555;">
-        © 2026 KODAI VALLEY WATERFALL RESORTS. ALL RIGHTS RESERVED.
-    </footer>
 
     <script>
         function sendWhatsApp() {
@@ -225,15 +191,9 @@
             const checkin = document.getElementById('checkin').value;
             const checkout = document.getElementById('checkout').value;
 
-            if(!name || !phone) {
-                alert("Please fill your Name and Phone for WhatsApp booking.");
-                return;
-            }
-
-            const text = `*LUXURY BOOKING REQUEST*%0A%0A*Guest:* ${name}%0A*Phone:* ${phone}%0A*Check-in:* ${checkin}%0A*Check-out:* ${checkout}`;
+            const text = `*Luxury Booking Request*%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Dates:* ${checkin} to ${checkout}`;
             window.open(`https://wa.me/919976278957?text=${text}`, '_blank');
         }
     </script>
-
 </body>
 </html>
