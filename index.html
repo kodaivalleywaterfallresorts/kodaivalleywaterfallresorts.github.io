@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kodai Valley Waterfall Resorts | Mohamed Mastan</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary: #00695c; /* Royal Teal */
-            --accent: #ff6d00;  /* Vibrant Orange for buttons */
+            --primary: #00695c; 
+            --accent: #ff6d00;  
             --light-bg: #ffffff;
             --text: #263238;
         }
@@ -21,10 +22,23 @@
             scroll-behavior: smooth;
         }
 
+        /* --- Top Contact Bar --- */
+        .top-bar {
+            background: var(--primary);
+            color: white;
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .top-bar a { color: white; text-decoration: none; }
+
         /* --- Royal Header --- */
         header {
-            height: 70vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('Resort_5[1].jpg');
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('Resort_5[1].jpg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -155,24 +169,34 @@
             background: #25d366; color: white; width: 65px; height: 65px;
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
             font-size: 35px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); z-index: 1000;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .top-bar { flex-direction: column; gap: 5px; text-align: center; }
         }
     </style>
 </head>
 <body>
+
+<div class="top-bar">
+    <div><i class="fas fa-map-marker-alt"></i> Kodaikanal, Tamil Nadu</div>
+    <div><i class="fas fa-phone-alt"></i> <a href="tel:+919976278957">+91 99762 78957</a></div>
+</div>
 
 <header>
     <h1>Kodai Valley Waterfall Resorts</h1>
     <div class="owner-info">Owner: Mohamed Mastan</div>
 </header>
 
-<div class="section-title">Experience Our Luxury</div>
+<div class="section-title">Experience Luxury & Adventure</div>
 <div class="gallery">
     <div class="gallery-item">
         <img src="Resort_5[1].jpg" alt="Resort View">
         <p>Main Resort Palace</p>
     </div>
     <div class="gallery-item">
-        <img src="Jeep1 .jpg" alt="Jeep Safari">
+        <img src="Jeep1[1].jpg" alt="Jeep Safari">
         <p>Adventure Jeep Safari</p>
     </div>
     <div class="gallery-item">
@@ -184,7 +208,7 @@
         <p>5-Star Luxury Room</p>
     </div>
     <div class="gallery-item">
-        <img src="Sitting_area[1].jpg" alt="Lounge">
+        <img src="Sitting_area[1].jpg" alt="Lounge Area">
         <p>Relaxation Area</p>
     </div>
     <div class="gallery-item">
@@ -197,8 +221,8 @@
     <div class="booking-card">
         <h2>Reserve Your Stay</h2>
         <form id="resortForm">
-            <label>NAME</label>
-            <input type="text" id="name" placeholder="Mohamed Mastan" required>
+            <label>FULL NAME</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
 
             <label>EMAIL ID</label>
             <input type="email" id="email" placeholder="yourname@gmail.com" required>
@@ -220,8 +244,8 @@
             <label>TOTAL GUESTS</label>
             <input type="number" id="guests" min="1" placeholder="Ex: 4">
 
-            <label>WANTED DETAILS / SPECIAL REQUESTS</label>
-            <textarea id="details" rows="3" placeholder="Extra bed, Food preferences..."></textarea>
+            <label>SPECIAL REQUESTS</label>
+            <textarea id="details" rows="3" placeholder="Food requirements, Extra bed, etc."></textarea>
 
             <button type="button" class="submit-btn" onclick="sendToWhatsApp()">
                 BOOK NOW VIA WHATSAPP
@@ -238,8 +262,6 @@
     © 2026 Kodai Valley Waterfall Resorts | Developed for <b>Mohamed Mastan</b><br>
     Contact: +91 9976278957
 </footer>
-
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 <script>
     function sendToWhatsApp() {
