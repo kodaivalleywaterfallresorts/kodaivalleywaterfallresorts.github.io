@@ -3,197 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kodai Valley Waterfall Resorts | Official</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+    <title>Kodai Valley Waterfall Resorts | Owner: Masthan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background-color: #e3f2fd; color: #333; }
+        :root {
+            --primary: #004d40; /* Deep Nature Green */
+            --accent: #ffb300;  /* Gold/Yellow for attractiveness */
+            --bg: #f0f4f3;
+        }
 
-        /* --- Header Navigation --- */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg);
+            color: #333;
+        }
+
+        /* --- Header Section --- */
         header {
-            background: white;
-            padding: 15px 50px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('outside.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky; top: 0; z-index: 1000;
-        }
-        .logo { color: #0a9396; font-weight: 600; font-size: 1.2rem; }
-        nav a { margin: 0 15px; text-decoration: none; color: #555; font-size: 0.9rem; }
-        .book-now-btn { background: #0a9396; color: white; padding: 8px 20px; border-radius: 5px; text-decoration: none; }
-
-        /* --- Hero Gallery Layout --- */
-        .gallery-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            padding: 40px 50px;
-            max-width: 1400px;
-            margin: auto;
-        }
-
-        .card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            position: relative;
-            height: 450px;
-            transition: 0.3s;
-        }
-        .card:hover { transform: translateY(-5px); }
-
-        .card img { width: 100%; height: 100%; object-fit: cover; }
-        
-        .card-content {
-            position: absolute;
-            bottom: 0; left: 0; width: 100%;
-            padding: 20px;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
             color: white;
+            text-align: center;
+            border-bottom: 8px solid var(--accent);
         }
-        .card-content h2 { font-size: 1.2rem; margin-bottom: 5px; }
-        .card-content p { font-size: 0.8rem; opacity: 0.8; }
 
-        /* --- Bottom Split Sections --- */
-        .bottom-sections {
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            margin: 0;
+        }
+
+        .owner-tag {
+            background: var(--accent);
+            color: black;
+            padding: 5px 15px;
+            font-weight: bold;
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+
+        /* --- Full Photo Gallery --- */
+        .section-title {
+            text-align: center;
+            padding: 40px 0 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .gallery {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            padding: 40px 50px;
-            max-width: 1400px;
-            margin: auto;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px 5%;
         }
 
-        .booking-form-card, .info-card {
-            background: white;
-            padding: 30px;
+        .gallery img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            border: 3px solid white;
         }
 
-        .booking-form-card h3 { color: #0a9396; margin-bottom: 20px; }
+        .gallery img:hover {
+            transform: scale(1.05);
+            border-color: var(--accent);
+        }
+
+        /* --- Booking Form Section --- */
+        .booking-container {
+            background: var(--primary);
+            color: white;
+            padding: 50px 5%;
+            margin-top: 40px;
+        }
+
+        .booking-box {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            color: #333;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .booking-box h3 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        label { font-size: 0.9rem; font-weight: 600; margin-top: 10px; display: block; }
+
         input, textarea, select {
-            width: 100%; padding: 12px; margin: 8px 0;
-            border: 1px solid #ddd; border-radius: 5px; background: #f9f9f9;
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-family: inherit;
         }
 
-        .submit-btn {
-            background: #0a9396; color: white; border: none; width: 100%;
-            padding: 15px; border-radius: 5px; font-weight: 600; cursor: pointer;
+        .book-btn {
+            background: #25D366;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 18px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
         }
 
-        /* WhatsApp Floating Button */
-        .whatsapp-float {
-            position: fixed; bottom: 30px; right: 30px;
-            background: #25d366; color: white; width: 60px; height: 60px;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-size: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1000;
+        .book-btn:hover {
+            background: #1da851;
+            transform: translateY(-3px);
         }
 
-        @media (max-width: 768px) {
-            .bottom-sections { grid-template-columns: 1fr; }
-            header { padding: 15px 20px; }
-            nav { display: none; }
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #e0e0e0;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">KODAI VALLEY <br> <span style="font-size: 0.7rem;">Waterfall Resorts</span></div>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-            <a href="#" class="book-now-btn">BOOK NOW</a>
-        </nav>
-    </header>
+<header>
+    <h1>Kodai Valley Waterfall Resorts</h1>
+    <div class="owner-tag">Owner: Masthan</div>
+    <p style="margin-top: 15px;">A Paradise in Kodaikanal</p>
+</header>
 
-    <div class="gallery-container">
-        <div class="card">
-            <img src="outside.jpeg" alt="Resort View">
-            <div class="card-content">
-                <h2>Kodai Valley</h2>
-                <p>Waterfall Resorts | Official Website</p>
+<div class="section-title">Our Resort Gallery</div>
+<div class="gallery">
+    <img src="outside.jpeg" alt="Resort View">
+    <img src="snow.jpeg" alt="Snow View">
+    <img src="falls.jpeg" alt="Waterfall View">
+</div>
+
+<div class="booking-container" id="book-now">
+    <div class="booking-box">
+        <h3>Book Now - WhatsApp Booking</h3>
+        
+        <label>Full Name</label>
+        <input type="text" id="name" placeholder="Ungal Peyar" required>
+
+        <label>Email ID</label>
+        <input type="email" id="email" placeholder="example@gmail.com" required>
+
+        <label>Mobile Number</label>
+        <input type="tel" id="phone" placeholder="98765 43210" required>
+
+        <div style="display: flex; gap: 10px;">
+            <div style="flex:1">
+                <label>Check-in Date</label>
+                <input type="date" id="checkin">
+            </div>
+            <div style="flex:1">
+                <label>Check-out Date</label>
+                <input type="date" id="checkout">
             </div>
         </div>
-        <div class="card">
-            <img src="falls.jpeg" alt="Waterfall">
-            <div class="card-content">
-                <h2>Private Falls</h2>
-                <p>Experience Nature's Beauty</p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="snow.jpeg" alt="Rooms">
-            <div class="card-content">
-                <h2>Luxury Stay</h2>
-                <p>Premium Comfort Rooms</p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="outside.jpeg" alt="Garden">
-            <div class="card-content">
-                <h2>Nature Walk</h2>
-                <p>Greenery All Around</p>
-            </div>
-        </div>
+
+        <label>Number of Guests</label>
+        <input type="number" id="guests" min="1" placeholder="Ex: 4">
+
+        <label>Wanted Details / Special Requests</label>
+        <textarea id="details" rows="3" placeholder="Food requirements, extra bed, etc."></textarea>
+
+        <button class="book-btn" onclick="sendToWhatsApp()">
+            CONFIRM BOOKING ON WHATSAPP
+        </button>
     </div>
+</div>
 
-    <div class="bottom-sections">
-        <div class="booking-form-card">
-            <h3>33 Booking Form</h3>
-            <form id="resortForm" action="https://formspree.io/f/xykdweba" method="POST">
-                <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
-                <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
-                <div style="display: flex; gap: 10px;">
-                    <input type="date" id="checkin" name="checkin" required>
-                    <input type="date" id="checkout" name="checkout" required>
-                </div>
-                <textarea id="message" name="message" rows="3" placeholder="Special Requests"></textarea>
-                <button type="submit" class="submit-btn">CONTINUE NOW</button>
-            </form>
-        </div>
+<footer>
+    © 2026 Kodai Valley Waterfall Resorts | Developed for <b>Masthan</b>
+</footer>
 
-        <div class="info-card">
-            <h3 style="color: #0a4d4f;">Direct WhatsApp Booking</h3>
-            <p style="font-size: 0.9rem; color: #666; margin: 15px 0;">
-                Click the button below to directly chat with our manager for instant booking and custom packages.
-            </p>
-            <div style="margin-top: 20px;">
-                <div style="display: flex; align-items: center; margin-bottom: 10px;">
-                    <i class="fab fa-whatsapp" style="color: #25d366; font-size: 1.5rem; margin-right: 10px;"></i>
-                    <span>Fast Response within 10 mins</span>
-                </div>
-                <div style="display: flex; align-items: center;">
-                    <i class="far fa-clock" style="color: #0a9396; font-size: 1.5rem; margin-right: 10px;"></i>
-                    <span>Available 24/7 for support</span>
-                </div>
-            </div>
-            <button onclick="sendWhatsApp()" class="submit-btn" style="background: #25d366; margin-top: 30px;">
-                CHAT ON WHATSAPP
-            </button>
-        </div>
-    </div>
+<script>
+    function sendToWhatsApp() {
+        // Collect Data
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const checkin = document.getElementById('checkin').value;
+        const checkout = document.getElementById('checkout').value;
+        const guests = document.getElementById('guests').value;
+        const details = document.getElementById('details').value;
 
-    <a href="#" onclick="sendWhatsApp()" class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <script>
-        function sendWhatsApp() {
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const checkin = document.getElementById('checkin').value;
-            const checkout = document.getElementById('checkout').value;
-
-            const text = `*Luxury Booking Request*%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Dates:* ${checkin} to ${checkout}`;
-            window.open(`https://wa.me/919976278957?text=${text}`, '_blank');
+        // Validation
+        if(!name || !phone || !checkin || !checkout) {
+            alert("Dayavu seidhu mukkiyamaana details-ai fill pannunga!");
+            return;
         }
-    </script>
+
+        // Professional WhatsApp Message Format
+        const message = `*NEW BOOKING REQUEST*%0A` +
+                        `----------------------------%0A` +
+                        `*Guest Name:* ${name}%0A` +
+                        `*Email:* ${email}%0A` +
+                        `*Phone:* ${phone}%0A` +
+                        `*Check-in:* ${checkin}%0A` +
+                        `*Check-out:* ${checkout}%0A` +
+                        `*Total Guests:* ${guests}%0A` +
+                        `*Requirements:* ${details}%0A` +
+                        `----------------------------%0A` +
+                        `_Sent from Kodai Valley Website_`;
+
+        const whatsappUrl = `https://wa.me/919976278957?text=${message}`;
+        window.open(whatsappUrl, '_blank');
+    }
+</script>
+
 </body>
 </html>
